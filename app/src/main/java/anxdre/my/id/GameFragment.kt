@@ -15,7 +15,7 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentGameBinding.inflate(inflater, container, false)
         return binding.root
     }
