@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/game_navigation"
+    app:startDestination="@id/studentListFragment">
+    <fragment
+        android:id="@+id/studentListFragment"
+        android:name="anxdre.my.id.view.studentlist.StudentListFragment"
+        tools:layout="@layout/fragment_student_list"
+        android:label="StudentListFragment" >
+        <action
+            android:id="@+id/actionToDetailStudentFragment"
+            app:destination="@id/studentDetailFragment"
+            app:popUpTo="@id/studentListFragment" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_student_detail"
+        android:id="@+id/studentDetailFragment"
+        android:name="anxdre.my.id.view.studentdetail.StudentDetailFragment"
+        android:label="StudentDetailFragment" />
+</navigation>
