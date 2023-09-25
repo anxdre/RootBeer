@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupWithNavController
 import anxdre.my.id.databinding.ActivityMainBinding
 
@@ -21,10 +22,12 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.nav_view) as NavHostFragment
         navController = navHostFragment.navController
 
-        binding.tbMain.setupWithNavController(navController)
+        binding.tbMain.setupWithNavController(navController, binding.dwMain)
+        binding.btMain.setupWithNavController(navController)
+        binding.navMain.setupWithNavController(navController)
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp()
+        return navController.navigateUp(binding.dwMain) || super.onSupportNavigateUp()
     }
 }

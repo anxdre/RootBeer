@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/round_home_64"
+        android:title="@string/home" />
+    <item
+        android:id="@+id/historyFragment"
+        android:icon="@drawable/round_format_list_bulleted_64"
+        android:title="@string/history" />
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/round_account_circle_64"
+        android:title="@string/profile" />
+</menu>
