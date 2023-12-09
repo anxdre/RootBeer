@@ -1,39 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="200dp"
-    style="?materialCardViewElevatedStyle"
-    android:layout_margin="16dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
 
-    <RelativeLayout
+
+    <data>
+        <variable
+            name="student"
+            type="anxdre.my.id.data.model.Student" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        style="?materialCardViewElevatedStyle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="200dp"
+        android:layout_margin="16dp">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/iv_profile"
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_launcher_foreground" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_id_student"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toEndOf="@id/iv_profile"
-            android:layout_marginStart="16dp"
-            android:text="id:000000" />
+            android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_student_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_id_student"
-            android:layout_alignStart="@id/tv_id_student"
-            android:text="student name"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_profile"
+                binding:imageUrl="@{student.picUrl}"
+                binding:error="@{@drawable/ic_launcher_foreground}"
+                android:layout_width="150dp"
+                android:scaleType="centerCrop"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
 
-    </RelativeLayout>
-</com.google.android.material.card.MaterialCardView>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_id_student"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:layout_toEndOf="@id/iv_profile"
+                android:text="@{student.id}" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_student_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_id_student"
+                android:layout_alignStart="@id/tv_id_student"
+                android:text="@{student.name}"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

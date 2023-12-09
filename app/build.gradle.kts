@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("androidx.navigation.safeargs.kotlin")
+    id("kotlin-kapt")
 }
 
 android {
@@ -37,6 +38,9 @@ android {
     viewBinding {
         enable = true
     }
+    dataBinding{
+        enable = true
+    }
 }
 
 dependencies {
@@ -54,6 +58,9 @@ dependencies {
 
     //view
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+
+    //network
+    implementation ("com.squareup.picasso:picasso:2.8")
 
 
     testImplementation("junit:junit:4.13.2")

@@ -6,23 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/tb_main"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:background="?colorPrimary"
-        app:title="@string/app_name"
-        android:foregroundTint="@color/white"
-        app:navigationIconTint="@color/white"
-        app:titleTextColor="@color/white" />
-
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_view"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/tb_main"
         android:padding="16dp"
         app:defaultNavHost="true"
         app:navGraph="@navigation/main_navigation" />
